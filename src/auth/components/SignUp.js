@@ -29,6 +29,7 @@ class SignUp extends Component {
       .then(res => setUser(res.data.user))
       .then(() => alert(messages.signUpSuccess, 'success'))
       .then(() => history.push('/'))
+      .then(console.log(this.state))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '', passwordConfirmation: '' })
