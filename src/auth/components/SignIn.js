@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { signIn } from '../api'
 import messages from '../messages'
@@ -59,6 +59,9 @@ class SignIn extends Component {
           onChange={this.handleChange}
         />
         <button type="submit">Sign In</button>
+        <p>
+          <Link to="/sign-up">or Sign Up</Link>
+        </p>
       </form>
     )
   }

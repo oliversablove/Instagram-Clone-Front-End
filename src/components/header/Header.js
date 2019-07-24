@@ -1,35 +1,38 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Header.scss'
 
-const authenticatedOptions = (
-  <React.Fragment>
-    <Link to="/change-password">Change Password</Link>
+// switch link from sign-in to current non-user page (either sign-up or sign-in)
+const notSignedInLogo = (
+  <Fragment>
+    <Link className="title" to="/sign-in">
+      <span>NOT</span>stagram
+    </Link>
+  </Fragment>
+)
+
+const signedInLogo = (
+  <Fragment>
+    <Link className="title" to="/">
+      <span>NOT</span>stagram
+    </Link>
+  </Fragment>
+)
+
+const signOut = (
+  <Fragment>
     <Link to="/sign-out">Sign Out</Link>
-  </React.Fragment>
-)
-
-const unauthenticatedOptions = (
-  <React.Fragment>
-    <Link to="/sign-up">Sign Up</Link>
-    <Link to="/sign-in">Sign In</Link>
-  </React.Fragment>
-)
-
-const alwaysOptions = (
-  <React.Fragment>
-    <Link to="/">Home</Link>
-  </React.Fragment>
+  </Fragment>
 )
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h1 className="title"><span>NOT</span>stagram</h1>
+    <h1 className="title">
+      { user ? signedInLogo : notSignedInLogo }
+    </h1>
     <nav>
-      { alwaysOptions }
-      { user && <span>Welcome, {user.email}</span>}
-      { user ? authenticatedOptions : unauthenticatedOptions }
+      { user ? signOut : '' }
     </nav>
   </header>
 )

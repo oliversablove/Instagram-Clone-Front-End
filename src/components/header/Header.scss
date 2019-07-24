@@ -54,14 +54,14 @@
   top: 0;
   left: 0;
   right: 0;
-  
+
   background-color: #eee;
   height: 40px;
   width: 100vw;
   border-bottom: 1px solid #CCC;
 }
 
-.main-header > h1 {
+.title {
   margin: 0;
   padding: 0;
   color: #171717;
@@ -71,6 +71,17 @@
   line-height: 40px;
 }
 
-.main-header > h1 > span {
+.title:hover {
+  margin: 0;
+  padding: 0;
+  color: #171717;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.title > span {
   font-weight: 900!important;
 }
