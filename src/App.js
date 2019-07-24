@@ -3,7 +3,9 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-import Header from './header/Header'
+import Header from './components/header/Header'
+import Feed from './components/feed/Feed'
+import Footer from './components/footer/Footer'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -56,6 +58,8 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
+        <Feed user={user}/>
+        <Footer user={user}/>
       </React.Fragment>
     )
   }
