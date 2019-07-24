@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { changePassword } from '../api'
-import messages from '../messages'
 
 class ChangePassword extends Component {
   constructor () {
@@ -21,15 +20,13 @@ class ChangePassword extends Component {
   onChangePassword = event => {
     event.preventDefault()
 
-    const { alert, history, user } = this.props
+    const { history, user } = this.props
 
     changePassword(this.state, user)
-      .then(() => alert(messages.changePasswordSuccess, 'success'))
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
         this.setState({ oldPassword: '', newPassword: '' })
-        alert(messages.changePasswordFailure, 'danger')
       })
   }
 

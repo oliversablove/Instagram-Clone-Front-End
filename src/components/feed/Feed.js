@@ -33,9 +33,9 @@ const authenticatedOptions = (
 )
 
 const Feed = ({ user }) => (
-  <main className="feed">
+  <Fragment>
     { user && authenticatedOptions}
-  </main>
+  </Fragment>
 )
 
 export default Feed

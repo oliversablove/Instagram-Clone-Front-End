@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import { signIn } from '../api'
-import messages from '../messages'
 
 class SignIn extends Component {
   constructor () {
@@ -21,16 +20,14 @@ class SignIn extends Component {
   onSignIn = event => {
     event.preventDefault()
 
-    const { alert, history, setUser } = this.props
+    const { history, setUser } = this.props
 
     signIn(this.state)
       .then(res => setUser(res.data.user))
-      .then(() => alert(messages.signInSuccess, 'success'))
-      .then(() => history.push('/'))
+      .then(() => history.push('/feed'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })
-        alert(messages.signInFailure, 'danger')
       })
   }
 
