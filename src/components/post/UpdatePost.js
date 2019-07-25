@@ -72,7 +72,7 @@ class UpdatePost extends Component {
     const { post, updated } = this.state
 
     if (updated) {
-      return <Redirect to={`/posts/${this.props.match.params.id}`} />
+      return <Redirect to='/posts' />
     }
 
     return (

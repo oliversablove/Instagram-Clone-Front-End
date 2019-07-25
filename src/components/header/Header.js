@@ -12,7 +12,7 @@ const Header = ({ user }) => {
           <span>NOT</span>stagram
         </Link>
       </h1>
-      <nav>
+      <nav className="sign-out-link">
         { user ? <Link to="/sign-out">Sign Out</Link> : '' }
       </nav>
     </header>

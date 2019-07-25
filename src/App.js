@@ -3,9 +3,9 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
-// import Layout from './components/layout/Layout'
+// import Header from './components/header/Header'
+// import Footer from './components/footer/Footer'
+import Layout from './components/layout/Layout'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -36,8 +36,7 @@ class App extends Component {
      const { user } = this.state
 
      return (
-       <React.Fragment>
-         <Header user={user} />
+       <Layout user={user}>
          <Route path='/sign-up' render={() => (
            <SignUp setUser={this.setUser} />
          )} />
@@ -66,8 +65,7 @@ class App extends Component {
          <AuthenticatedRoute user={user} exact path='/posts/:id/update-post' render={() => (
            <UpdatePost user={user} />
          )} />
-         <Footer user={user} />
-       </React.Fragment>
+       </Layout>
      )
    }
 }

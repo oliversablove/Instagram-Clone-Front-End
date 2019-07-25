@@ -43,6 +43,7 @@ class Post extends Component {
   }
 
   render () {
+    const { user } = this.props
     const { post, error, deleted } = this.state
     const ownerButtons = (
       <Fragment>
@@ -69,7 +70,7 @@ class Post extends Component {
         <h4>Name: {post.name}</h4>
         <p>Description: {post.description}</p>
         <p>Owner: {post.owner}</p>
-        <div>{ownerButtons}</div>
+        {user && user._id === post.owner ? ownerButtons : <p>{user ? '' : 'Sign in to edit your books'}</p>}
       </Fragment>
     )
   }
