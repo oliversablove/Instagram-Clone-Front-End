@@ -22,16 +22,16 @@ class UpdatePost extends Component {
   }
 
   componentDidMount () {
-    axios(`${apiUrl}/posts/${this.props.match.params.id}`)
-      .then(res => {
-        this.setState({ post: {
-          ...res.data.post
-        }
-        })
-      })
+    axios({
+      url: `${apiUrl}/posts/${this.props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      }
+    })
+      .then(res => this.setState({ post: res.data.post, loaded: true }))
       .catch(console.error)
   }
-
   // handleChange = event => {
   //   const updatedField = { [event.target.name]: event.target.value }
   //   const editedPost = Object.assign(this.state.post, updatedField)
