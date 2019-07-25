@@ -14,6 +14,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import CreatePost from './components/post/CreatePost'
 import Posts from './components/post/Posts'
 import Post from './components/post/Post'
+import UpdatePost from './components/post/UpdatePost'
 
 class App extends Component {
   constructor (props) {
@@ -61,6 +62,9 @@ class App extends Component {
            } />
          <AuthenticatedRoute user={user} exact path='/post/:id' render={() => (
            <Post user={user} />
+         )} />
+         <AuthenticatedRoute user={user} exact path='/posts/:id/update-post' render={() => (
+           <UpdatePost user={user} />
          )} />
          <Footer user={user} />
        </React.Fragment>

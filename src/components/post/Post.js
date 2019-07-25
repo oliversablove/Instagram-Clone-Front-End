@@ -38,6 +38,7 @@ class Post extends Component {
       }
     })
       .then(() => this.setState({ deleted: true }))
+      .catch(console.log('post does not belong to this account'))
       .catch(err => this.setState({ error: err.message }))
   }
 
@@ -45,7 +46,7 @@ class Post extends Component {
     const { post, error, deleted } = this.state
     const ownerButtons = (
       <Fragment>
-        <Link to={`/posts/${this.props.match.params.id}/edit`}>
+        <Link to={`/posts/${this.props.match.params.id}/update-post`}>
           <Button className="mr-2">Edit</Button>
         </Link>
         <Button variant="danger" onClick={this.destroy}>Delete</Button>

@@ -8,7 +8,7 @@ const Header = ({ user }) => {
   return (
     <header className="main-header">
       <h1 className="title">
-        <Link className="title" to={user ? '/' : '/sign-in'}>
+        <Link className="title" to={user ? '/posts' : '/sign-in'}>
           <span>NOT</span>stagram
         </Link>
       </h1>
