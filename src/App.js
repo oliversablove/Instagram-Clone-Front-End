@@ -3,15 +3,17 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-// import Header from './components/header/Header'
-// import Footer from './components/footer/Footer'
-import Layout from './components/layout/Layout'
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+// import Layout from './components/layout/Layout'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+// import Home from './pages/home/Home'
 import CreatePost from './components/post/CreatePost'
-import Feed from './components/feed/Feed'
+import Posts from './components/post/Posts'
+import Post from './components/post/Post'
 
 class App extends Component {
   constructor (props) {
@@ -33,7 +35,8 @@ class App extends Component {
      const { user } = this.state
 
      return (
-       <Layout user={user}>
+       <React.Fragment>
+         <Header user={user} />
          <Route path='/sign-up' render={() => (
            <SignUp setUser={this.setUser} />
          )} />
@@ -46,13 +49,21 @@ class App extends Component {
          <AuthenticatedRoute user={user} path='/change-password' render={() => (
            <ChangePassword user={user} />
          )} />
-         <AuthenticatedRoute user={user} path='/new-post' render={() => (
+         {/* <AuthenticatedRoute user={user} path='/' render={() => (
+           <Home user={user} />
+         )} /> */ }
+         <AuthenticatedRoute user={user} exact path='/new-post' render={() => (
            <CreatePost user={user} />
          )} />
-         <AuthenticatedRoute user={user} path='/feed' render={() => (
-           <Feed user={user} />
+         <AuthenticatedRoute user={user}
+           exact path='/posts'
+           render={() => <Posts user={user}/>
+           } />
+         <AuthenticatedRoute user={user} exact path='/post/:id' render={() => (
+           <Post user={user} />
          )} />
-       </Layout>
+         <Footer user={user} />
+       </React.Fragment>
      )
    }
 }

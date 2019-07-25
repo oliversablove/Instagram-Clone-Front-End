@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+
+import Button from 'react-bootstrap/Button'
 
 import './Footer.scss'
 
 const authenticatedOptions = (
   <Fragment>
-    <button>Home</button>
-    <button>Global</button>
-    <button><Link to="new-post">Post</Link></button>
-    <button>Notifications</button>
-    <button>Profile</button>
+    <Button>Home</Button>
+    <Button>Global</Button>
+    <Button href="#new-post">New Post</Button>
+    <Button>Notifications</Button>
+    <Button href="#posts">Posts</Button>
   </Fragment>
 )
 

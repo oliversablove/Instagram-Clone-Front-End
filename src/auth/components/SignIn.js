@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import { signIn } from '../api'
+// import Layout from '../../components/layout/Layout'
 
 class SignIn extends Component {
   constructor () {
@@ -24,7 +25,7 @@ class SignIn extends Component {
 
     signIn(this.state)
       .then(res => setUser(res.data.user))
-      .then(() => history.push('/feed'))
+      .then(() => history.push('/posts'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })

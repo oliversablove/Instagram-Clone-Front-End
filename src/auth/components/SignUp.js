@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import { signUp, signIn } from '../api'
+// import Layout from '../../components/layout/Layout'
 
 class SignUp extends Component {
   constructor () {

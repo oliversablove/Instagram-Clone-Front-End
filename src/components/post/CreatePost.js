@@ -6,6 +6,7 @@ import apiUrl from '../../apiConfig'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+// import Layout from '../../components/layout/Layout'
 
 class CreatePost extends Component {
   constructor (props) {
@@ -41,7 +42,7 @@ class CreatePost extends Component {
       },
       data: { post: this.state.post }
     })
-      .then(res => this.setState({ createdBookId: res.data.post._id }))
+      .then(res => this.setState({ createdPostId: res.data.post._id }))
       .catch(console.error)
   }
 
