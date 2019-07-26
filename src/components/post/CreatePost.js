@@ -51,7 +51,7 @@ class CreatePost extends Component {
     const { handleChange, handleSubmit } = this
 
     if (createdPostId) {
-      return <Redirect to={`/posts/${createdPostId}`} />
+      return <Redirect to='/posts' />
     }
 
     return (
