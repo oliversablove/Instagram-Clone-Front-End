@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
+import './Posts.scss'
+
 class Posts extends Component {
   constructor (props) {
     super(props)
@@ -35,8 +37,9 @@ class Posts extends Component {
     }
 
     const postsList = posts.map(post => (
-      <li key={post._id}>
+      <li className="pL-li" key={post._id}>
         <Link to={`/post/${post._id}`}>{post.name}</Link>
+        <br />{post.description}<br />{post.url}
       </li>
     ))
 

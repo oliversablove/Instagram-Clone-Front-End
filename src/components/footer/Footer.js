@@ -6,10 +6,7 @@ import './Footer.scss'
 
 const authenticatedOptions = (
   <Fragment>
-    <Button>Home</Button>
-    <Button>Global</Button>
     <Button href="#new-post">New Post</Button>
-    <Button>Notifications</Button>
     <Button href="#posts">Posts</Button>
   </Fragment>
 )
