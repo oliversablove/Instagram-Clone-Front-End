@@ -25,6 +25,7 @@ Technologies Used:
 6. express
 7. mongoDB
 8. Heroku
+
 Link to Project Wireframe: https://i.imgur.com/R2Ga3Pi.jpg
 
 App Screenshot:
