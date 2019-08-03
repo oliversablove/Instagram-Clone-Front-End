@@ -28,7 +28,7 @@ class SignUp extends Component {
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
       .then(() => history.push('/'))
-      .then(console.log(this.state))
+      // .then(console.log(this.state))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '', passwordConfirmation: '' })

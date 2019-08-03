@@ -38,7 +38,7 @@ class Post extends Component {
       }
     })
       .then(() => this.setState({ deleted: true }))
-      .catch(console.log('post does not belong to this account'))
+      // .catch(console.log('post does not belong to this account'))
       .catch(err => this.setState({ error: err.message }))
   }
 

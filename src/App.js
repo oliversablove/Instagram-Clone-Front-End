@@ -27,7 +27,7 @@ class App extends Component {
 
    setUser = user => {
      this.setState({ user })
-     console.log(this.state)
+     // console.log(this.state)
    }
 
    clearUser = () => this.setState({ user: null })
